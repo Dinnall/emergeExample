@@ -19,7 +19,6 @@ var Format = {
 			let months = n - (years * 12);
 			return `${years} Years and ${months} Months`;
 		}
-		console.log("Date:",n)
 		return `${n} Months`;
 	},
 	getOnlyNumber: function(inp){

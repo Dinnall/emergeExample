@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/emergeSecondDesign/static/css/main.e7135ae1.chunk.css",
-    "main.js": "/emergeSecondDesign/static/js/main.cf22aab8.chunk.js",
-    "main.js.map": "/emergeSecondDesign/static/js/main.cf22aab8.chunk.js.map",
-    "runtime-main.js": "/emergeSecondDesign/static/js/runtime-main.dff5e66e.js",
-    "runtime-main.js.map": "/emergeSecondDesign/static/js/runtime-main.dff5e66e.js.map",
-    "static/css/2.adc6f56e.chunk.css": "/emergeSecondDesign/static/css/2.adc6f56e.chunk.css",
-    "static/js/2.1b576fc2.chunk.js": "/emergeSecondDesign/static/js/2.1b576fc2.chunk.js",
-    "static/js/2.1b576fc2.chunk.js.map": "/emergeSecondDesign/static/js/2.1b576fc2.chunk.js.map",
-    "index.html": "/emergeSecondDesign/index.html",
-    "static/css/2.adc6f56e.chunk.css.map": "/emergeSecondDesign/static/css/2.adc6f56e.chunk.css.map",
-    "static/css/main.e7135ae1.chunk.css.map": "/emergeSecondDesign/static/css/main.e7135ae1.chunk.css.map",
-    "static/js/2.1b576fc2.chunk.js.LICENSE.txt": "/emergeSecondDesign/static/js/2.1b576fc2.chunk.js.LICENSE.txt"
+    "main.css": "/emergeExample/static/css/main.e7135ae1.chunk.css",
+    "main.js": "/emergeExample/static/js/main.cf22aab8.chunk.js",
+    "main.js.map": "/emergeExample/static/js/main.cf22aab8.chunk.js.map",
+    "runtime-main.js": "/emergeExample/static/js/runtime-main.9abcf172.js",
+    "runtime-main.js.map": "/emergeExample/static/js/runtime-main.9abcf172.js.map",
+    "static/css/2.adc6f56e.chunk.css": "/emergeExample/static/css/2.adc6f56e.chunk.css",
+    "static/js/2.1b576fc2.chunk.js": "/emergeExample/static/js/2.1b576fc2.chunk.js",
+    "static/js/2.1b576fc2.chunk.js.map": "/emergeExample/static/js/2.1b576fc2.chunk.js.map",
+    "index.html": "/emergeExample/index.html",
+    "static/css/2.adc6f56e.chunk.css.map": "/emergeExample/static/css/2.adc6f56e.chunk.css.map",
+    "static/css/main.e7135ae1.chunk.css.map": "/emergeExample/static/css/main.e7135ae1.chunk.css.map",
+    "static/js/2.1b576fc2.chunk.js.LICENSE.txt": "/emergeExample/static/js/2.1b576fc2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.dff5e66e.js",
+    "static/js/runtime-main.9abcf172.js",
     "static/css/2.adc6f56e.chunk.css",
     "static/js/2.1b576fc2.chunk.js",
     "static/css/main.e7135ae1.chunk.css",
