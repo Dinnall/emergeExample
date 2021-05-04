@@ -85,7 +85,7 @@ class SingleCard extends React.Component {
     );
   }
   handleChange(e) {
-    console.log(e);
+
     let value = e.target.value;
     value = value.replaceAll(/[^0-9]/g, "");
     let name = e.target.name;

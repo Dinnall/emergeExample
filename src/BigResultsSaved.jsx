@@ -8,10 +8,14 @@ import { FaRegQuestionCircle } from "react-icons/fa";
 class BigResultsSaved extends React.Component {
     render() {
         let Result = Calc.all(this.props.cards, this.props.addExtra);
+        let amountWithoutMonthlyAdditional = Calc.all(this.props.cards).total;
+        let amountWithExtra = Result.total;
+        let savedInterest = amountWithoutMonthlyAdditional - amountWithExtra;
+        
         return (<div className="big-result">
             <div className="result-main single-result">
                 <label style={{ color: "#FF6200", fontSize: "x-large" }}>Interest Saved <FaRegQuestionCircle /></label>
-                <span style={{ color: "#FF6200" }}>{Format.usd(Result.interestPaid * 100)}</span>
+                <span style={{ color: "#FF6200" }}>{Format.usd(savedInterest * 100)}</span>
             </div>
             <div className="result-secondary">
                 <div className="single-result">
@@ -19,7 +23,7 @@ class BigResultsSaved extends React.Component {
                     <span>{Format.months(Result.payoff)}</span>
                 </div>
                 <div className="single-result">              
-                    <label>Total Amount:</label>
+                    <label>Total Payment:</label>
                     <span>{Format.usd(Result.total * 100, false)}</span>
                 </div>
                 <button className="view-report" onClick={() => this.props.report()}>Payoff Report</button>

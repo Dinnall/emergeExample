@@ -2,10 +2,14 @@ import React from 'react';
 import Calc from './helpers/calc.js';
 import Format from './helpers/format.js';
 import BalanceChart from './BalanceChart.jsx';
+
+
 class BigResult extends React.Component {
 	render() {
 		let Result = Calc.all(this.props.cards, this.props.addExtra);
-		return (<div className="big-result">
+		console.log("OG Amount:", Format.usd(Result.total * 100, true))
+		return (
+		<div className="big-result">
 			<div className="result-main single-result">
 				<label style={{ fontSize: "x-large" }}>Interest Paid</label>
 				<span>{Format.usd(Result.interestPaid * 100)}</span>
@@ -16,7 +20,7 @@ class BigResult extends React.Component {
 					<span>{Format.months(Result.payoff)}</span>
 				</div>
 				<div className="single-result">
-					<label>Total Amount:</label>
+					<label>Total Payment:</label>
 					<span>{Format.usd(Result.total * 100, false)}</span>
 				</div>
 			  <button className="view-report" onClick={() => this.props.report()}>Payoff Report</button>
