@@ -11,6 +11,7 @@ class BigResult extends React.Component {
 		return (
 		<div className="big-result">
 			<div className="result-main single-result">
+				<label>{this.props.addExtra ? "Paying a little more than required minimum total" : "Your interest with only minimums payments"}</label>
 				<label style={{ fontSize: "x-large" }}>Interest Paid</label>
 				<span>{Format.usd(Result.interestPaid * 100)}</span>
 			</div>
