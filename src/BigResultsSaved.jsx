@@ -20,11 +20,11 @@ class BigResultsSaved extends React.Component {
             </div>
             <div className="result-secondary">
                 <div className="single-result">
-                    <label>Time to Payoff</label>
+                    <label style={{ fontSize: "x-large" }}>Time to Payoff</label>
                     <span>{Format.months(Result.payoff)}</span>
                 </div>
                 <div className="single-result">              
-                    <label>Total Payment:</label>
+                    <label style={{ fontSize: "x-large" }} >Total Payment:</label>
                     <span>{Format.usd(Result.total * 100, false)}</span>
                 </div>
                 <button className="view-report" onClick={() => this.props.report()}>Payoff Report</button>
