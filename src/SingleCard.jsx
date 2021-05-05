@@ -67,6 +67,7 @@ class SingleCard extends React.Component {
           <button
             className="add-new-card pointer"
             onClick={() => this.props.add()}
+            style={{ fontSize: "x-large" }}
           >
             <FiPlus />
             Add new card
@@ -76,6 +77,7 @@ class SingleCard extends React.Component {
             <div
               className="card-remove pointer"
               onClick={() => this.props.remove()}
+              style={{ fontSize: "x-large" }}
             >
               Remove
             </div>
