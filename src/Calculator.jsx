@@ -21,7 +21,6 @@ class Calculator extends React.Component {
       cards: currentCards,
       report: 0,
     };
-    console.log("state:", this.state.cards)
   }
   render() {
     return (

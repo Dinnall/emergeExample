@@ -4,7 +4,7 @@ class CardInput extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { editing: false, drag: false };
-		this.handleFocus = this.handleFocus.bind(this);
+		// this.handleFocus = this.handleFocus.bind(this);
 	}
 	render() {
 		let value = this.props.value;
@@ -55,11 +55,7 @@ class CardInput extends React.Component {
 						name={this.props.name}
 						value={value}
 						onChange={this.props.onChange}
-						onFocus={(e) => {
-								this.setState({ editing: true });
-								this.handleFocus(e);
-							}
-						}
+						onFocus={() => this.setState({ editing: true })}
 						onBlur={() => this.setState({ editing: false })}
 					/>
 					{this.props.type === "bubble" && this.props.slider === true && (
@@ -77,16 +73,16 @@ class CardInput extends React.Component {
 			</div>
 		);
 	}
-	handleFocus(e){
-		this.props.onChange({
-			target:{
-				value: "0",
-				name: this.props.name
-			}
-		});
-		setTimeout(function(){
-			e.target.setSelectionRange(10, 10);
-		}, 1);
-	}
+	// handleFocus(e){
+	// 	this.props.onChange({
+	// 		target:{
+	// 			value: "0",
+	// 			name: this.props.name
+	// 		}
+	// 	});
+	// 	setTimeout(function(){
+	// 		e.target.setSelectionRange(10, 10);
+	// 	}, 1);
+	// }
 }
 export default CardInput;

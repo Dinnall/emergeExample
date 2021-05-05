@@ -11,7 +11,6 @@ import ReactToPrint from 'react-to-print';
 class Report extends React.Component {
 	render() {
 		let Result = Calc.all(this.props.cards, this.props.addExtra);
-		console.log(Result);
 		let totalBalance = 0;
 		this.props.cards.forEach(singleCard => {
 			totalBalance += parseFloat(singleCard.balance);

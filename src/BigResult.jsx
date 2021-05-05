@@ -7,7 +7,7 @@ import BalanceChart from './BalanceChart.jsx';
 class BigResult extends React.Component {
 	render() {
 		let Result = Calc.all(this.props.cards, this.props.addExtra);
-		console.log("OG Amount:", Format.usd(Result.total * 100, true))
+
 		return (
 		<div className="big-result">
 			<div className="result-main single-result">
