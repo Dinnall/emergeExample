@@ -81,7 +81,7 @@ class SingleCard extends React.Component {
             </div>
           )}
         </div>
-        <div className="card-additional" style={{ display: this.state.calculated ? '' : 'none' }}>
+        <div className="card-additional" style={{ display: this.state.calculated ? '' : 'none', fontSize: "x-large" }}>
           <CardInput
             name="extra"
             value={this.state.data.extra}
