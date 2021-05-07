@@ -5,6 +5,8 @@ import BalanceChart from './BalanceChart.jsx';
 import DebtSummary from './DebtSummary.jsx';
 import Schedule from './Schedule.jsx';
 import './css/report-print.css';
+import Accordion from "./accordion/Accordion";
+
 
 import ReactToPrint from 'react-to-print';
 
@@ -15,6 +17,8 @@ class Report extends React.Component {
 		this.props.cards.forEach(singleCard => {
 			totalBalance += parseFloat(singleCard.balance);
 		});
+
+		console.log("Result.schedule:", Result.schedule)
 		return (<div className="report">
 			<div className="report-inner" ref={el => (this.componentRef = el)}>
 				<ReactToPrint
@@ -50,10 +54,13 @@ class Report extends React.Component {
 				<h3>Debt payoff is estimated at {Format.months(Result.payoff)}</h3>
 				<BalanceChart schedule={Result.schedule} />
 
+				<Accordion
+					title="View your credit card payment schedule"
+					content={<Schedule schedule={Result.schedule} />}
+				/>
+
 				<DebtSummary cards={this.props.cards} addExtra={this.props.addExtra}/>
 
-				<h4>Credit Card Payment Schedule</h4>
-				<Schedule schedule={Result.schedule} />
 			</div>
 		</div>);
 	}

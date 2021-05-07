@@ -8,7 +8,7 @@
 	display: flex;
 }
 
-.report .report-inner {
+.report-inner {
 	margin: 20px auto;
 	background: white;
 	width: 800px;
@@ -48,19 +48,19 @@
 	margin-bottom: 2em;
 }
 
-.report table {
+.report-inner table {
 	width: 100%;
 	border-collapse: collapse;
 }
 
-.report thead,
-.report tfoot {
+.report-inner thead,
+.report-inner tfoot {
 	color: white;
 	background: var(--purple);
 }
 
-.report td,
-.report th {
+.report-inner td,
+.report-inner th {
 	padding: 8px 16px;
 	border-right: 1px solid #ccc;
 	text-align: right;
@@ -72,14 +72,14 @@
 	text-align: center;
 }
 
-.report tbody tr:nth-child(even) {
+.report-inner tbody tr:nth-child(even) {
 	background: #eee;
 }
 
-.report tbody tr:hover {
+.report-inner tbody tr:hover {
 	background: var(--lightpink);
 }
 
-.report tbody td:hover {
+.report-inner tbody td:hover {
 	background: var(--pink);
 }

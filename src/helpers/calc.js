@@ -17,7 +17,6 @@ var Calc = {
 		let Rep = this.getSchedule(data, addExtra);
 		Object.assign(result, Rep);
 		result.interestPaid = this.round( (result.total - data.balance) );		
-		result.payoff -= 1;
 		return result;
 	},
 	getSchedule: function(data, addExtra = false){
@@ -39,7 +38,6 @@ var Calc = {
 			if(this.round(currBalance) <= 0) break;
 			let singlePayment = data.minimum / 100;
 			if(data.extra && addExtra) singlePayment += parseFloat(data.extra / 100);
-			if(singlePayment < 15) singlePayment = 15;
 			let singleInterest = (MR * currBalance) / 100;
 
 			if(singlePayment > (currBalance + singleInterest)) singlePayment = currBalance + singleInterest;
@@ -48,6 +46,7 @@ var Calc = {
 			singleInterest = this.round(singleInterest);
 
 			let singlePrincipal = singlePayment - singleInterest;
+			if(singlePrincipal < 0 && i>=120) break;
 			currBalance -= singlePrincipal;
 
 

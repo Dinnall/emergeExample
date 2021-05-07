@@ -6,10 +6,15 @@ import Calc from "./helpers/calc.js";
 class SingleCard extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      data: this.props.data,
+      calculated: false
+    };
     this.handleChange = this.handleChange.bind(this);
+    this.calculate = this.calculate.bind(this);
   }
   render() {
-    let Result = Calc.single(this.props.data);
+    let Result = Calc.single(this.state.data);
     return (
       <div className="single-card">
         <div
@@ -18,33 +23,26 @@ class SingleCard extends React.Component {
         >
           <CardInput
             name="balance"
-            value={this.props.data.balance}
+            value={this.state.data.balance}
             type="big"
             onChange={this.handleChange}
             label="Credit Card Balance"
           />
           <CardInput
             name="rate"
-            value={this.props.data.rate}
+            value={this.state.data.rate}
             type="bubble"
             onChange={this.handleChange}
             label="Interest Rate (APR)"
           />
           <CardInput
             name="minimum"
-            value={this.props.data.minimum}
+            value={this.state.data.minimum}
             type="big"
             onChange={this.handleChange}
             label="Minimum Payment Due"
           />
-          <CardInput
-            name="extra"
-            value={this.props.data.extra}
-            type="bubble"
-            onChange={this.handleChange}
-            label="Enter additional payments to see how if affects you payoff date and interest paid"
-            slider={true}
-          />
+          <button className="calculate" onClick={this.calculate}>Calculate</button>
         </div>
         {/* <div className="card-summary" ref={el => (this.componentRef = el)}>
 					<CardResult label="Monthly payment" value={Format.usd(Result.monthly * 100)} />
@@ -83,6 +81,16 @@ class SingleCard extends React.Component {
             </div>
           )}
         </div>
+        <div className="card-additional" style={{ display: this.state.calculated ? '' : 'none' }}>
+          <CardInput
+            name="extra"
+            value={this.state.data.extra}
+            type="bubble"
+            onChange={this.handleChange}
+            label="Enter additional payments to see how if affects you payoff date and interest paid"
+            slider={true}
+          />
+        </div>
       </div>
     );
   }
@@ -91,14 +99,18 @@ class SingleCard extends React.Component {
     let value = e.target.value;
     value = value.replaceAll(/[^0-9]/g, "");
     let name = e.target.name;
-    let current = this.props.data;
+    let current = this.state.data;
     if (value > 3600 && name === "rate") value = 3600;
     if (name === "minimum") value = value;
     if (value > 100000 && name === "extra") value = 100000;
     if (typeof current[name] !== "undefined") {
       current[name] = value;
-      this.props.update(current);
+      this.setState({ data: current });
     }
+  }
+  calculate() {
+    this.setState({ calculated: true });
+    this.props.update(this.state.data);
   }
 }
 export default SingleCard;

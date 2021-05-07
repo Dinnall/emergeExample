@@ -1,12 +1,33 @@
-@media print{
-	.close-report, .print-report{
-		display:none !important;
+@media print {
+
+	.close-report,
+	.print-report {
+		display: none !important;
 	}
-	table{
-		width:100%;
+
+	table {
+		width: 100%;
 	}
-	.report-inner{
-		padding:8px;
-		text-align:center;
+
+	.report-inner {
+		padding: 8px;
+	}
+
+	h4,
+	h3,
+	p {
+		margin-bottom: 1em !important;
+	}
+
+	.BalanceChart {
+		margin-bottom: 8em;
+	}
+
+	.accordion {
+		display: none !important;
+	}
+
+	.accordion__content {
+		max-height: none !important;
 	}
 }

@@ -1,5 +1,19 @@
 import Calc from './calc.js';
 var Format = {
+	monthName: [
+		'January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December'
+	],
 	usd: function(usd, includeWord=false){
 		usd = Calc.round(usd, 1);
 		if(typeof usd === 'number' && /^[0-9]+\.[0-9]{1,2}$/.test(usd.toString())) return `$${usd}` + (includeWord ? ' USD' : '');
@@ -21,7 +35,24 @@ var Format = {
 		}
 		return `${n} Months`;
 	},
+	years: function(n){
+		if(n > 12){
+			let years = Math.ceil(n / 12);
+			let months = n - (years * 12);
+			return `${years} Years`;
+		}
+		return `<1 Year`;
+	},
+	relativeMonth: function(n){
+		let D = new Date();
+		D.setMonth( D.getMonth() + n );
+		return `${Format.monthName[ D.getMonth() ]} ${D.getDate()}, ${ D.getFullYear() }`;
+	},
 	getOnlyNumber: function(inp){
+		if(!isNaN(inp) && inp < 100 && inp>0){
+			console.log(inp);
+			return ['0', (inp/10).toString().replaceAll(/[^0-9]/g, '')];
+		}
 		let number = inp.toString().replaceAll(/[^0-9]/g, '');
 		let decimals = '00';
 		if(number.length > 2){

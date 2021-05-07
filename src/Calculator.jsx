@@ -3,14 +3,15 @@ import BigResult from "./BigResult";
 import BigResultsSaved from "./BigResultsSaved";
 import Report from "./Report";
 import SingleCard from "./SingleCard.jsx";
+import BalanceChartTwin from "./BalanceChartTwin.jsx";
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
     let defaultCards = [
       {
-        balance: "000000",
-        rate: "0.0%",
-        minimum: "00",
+        balance: "0",
+        rate: "0",
+        minimum: "0",
         extra: "0",
       },
     ];
@@ -23,6 +24,12 @@ class Calculator extends React.Component {
     };
   }
   render() {
+    let showAdditional = false;
+    this.state.cards.forEach(SingleCard => {
+      if (SingleCard.extra > 0) {
+        showAdditional = true;
+      }
+    })
     return (
       <div className="calculator">
         <div className="cards-container">
@@ -42,20 +49,25 @@ class Calculator extends React.Component {
           })}
           {/* moved add new card button to SingleCard  */}
           {/* <button className="add-card" onClick={() => this.add()}>
-            Add new card
-          </button> */}
+						Add new card
+					</button> */}
         </div>
-        <div className="twin-results">
-          <BigResult
-            cards={this.state.cards}
-            report={() => this.setState({ report: false })}
-            addExtra={false}
-          />
-          <BigResultsSaved
-            cards={this.state.cards}
-            report={() => this.setState({ report: true })}
-            addExtra={true}
-          />
+        <div className="right-column">
+          <div className="twin-results">
+            <BigResult
+              cards={this.state.cards}
+              report={() => this.setState({ report: false })}
+              addExtra={false}
+            />
+            {showAdditional &&
+              <BigResultsSaved
+                cards={this.state.cards}
+                report={() => this.setState({ report: true })}
+                addExtra={true}
+              />
+            }
+          </div>
+          <BalanceChartTwin cards={this.state.cards} />
         </div>
         {this.state.report !== 0 && (
           <Report

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:ital,wght@0,100;0,400;0,700;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+
 :root {
   /* --background: #fbf6ef;  APP BACKGROUND COLOR */
   --brown: #cfc7b8;
@@ -68,7 +69,14 @@ input {
   display: flex;
   flex-direction: column;
   /* margin-right: 100px; */
-  
+  padding: 0 10px;
+  overflow-y: auto;
+  max-height: 95vh;
+
+}
+
+.right-column {
+  flex-grow: 1;
 }
 
 .BalanceChart {
@@ -76,7 +84,46 @@ input {
   height: 300px;
 }
 
+.BalanceChartTwin {
+  max-width: 90%;
+  width: 800px;
+  height: 300px;
+  margin: 50px auto 0 auto;
+}
+
+.BalanceChartTwin .legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.BalanceChartTwin .legend>* {
+  position: relative;
+  padding-left: 20px;
+}
+
+.BalanceChartTwin .legend .add {
+  margin-left: 30px;
+}
+
+.BalanceChartTwin .legend .min:before,
+.BalanceChartTwin .legend .add:before {
+  content: " ";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  left: 0;
+  border-radius: 4px;
+  top: 3px;
+  background: #434343;
+}
+
+.BalanceChartTwin .legend .add:before {
+  background: #ff6f31;
+}
+
 @media (max-width: 940px) {
+
   .Header,
   .calculator {
     width: 95vw;
@@ -94,6 +141,7 @@ input {
 }
 
 @media (max-width: 450px) {
+
   .Header,
   .calculator {
     width: 98vw;
@@ -103,3 +151,4 @@ input {
 @import url("./card.css");
 @import url("./result.css");
 @import url("./report.css");
+@import url("./report-print.css");
