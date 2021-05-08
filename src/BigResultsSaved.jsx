@@ -3,7 +3,7 @@ import Calc from './helpers/calc.js';
 import Format from './helpers/format.js';
 import BalanceChart from './BalanceChart.jsx';
 import { FaRegQuestionCircle } from "react-icons/fa";
-
+import ReactTooltip from 'react-tooltip';
 
 class BigResultsSaved extends React.Component {
     render() {
@@ -15,7 +15,12 @@ class BigResultsSaved extends React.Component {
         return (<div className="big-result">
             <div className="result-main single-result">
                 <label>Paying a little more than required minimum</label>
-                <label style={{ color: "#FF6200", fontSize: "x-large" }}>Interest Saved <FaRegQuestionCircle /></label>
+                <label style={{ color: "#FF6200", fontSize: "x-large", display: "flex", alignItems: "center" }}>
+                    Interest Saved <FaRegQuestionCircle data-tip data-for='interestSavedTooltip' />
+                    <ReactTooltip id='interestSavedTooltip'>
+                        <span>This is the tooltip</span>
+                    </ReactTooltip>
+                </label>
                 <span style={{ color: "#FF6200" }}>{Format.usd(savedInterest * 100)}</span>
             </div>
             <div className="result-secondary">

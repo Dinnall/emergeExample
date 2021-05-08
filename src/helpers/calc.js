@@ -34,7 +34,7 @@ var Calc = {
 			principal: 0,
 			balance: currBalance
 		});
-		for(let i=0;i<999;i++){
+		for(let i=0;i<240;i++){
 			if(this.round(currBalance) <= 0) break;
 			let singlePayment = data.minimum / 100;
 			if(data.extra && addExtra) singlePayment += parseFloat(data.extra / 100);

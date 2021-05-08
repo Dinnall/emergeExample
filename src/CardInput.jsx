@@ -1,5 +1,7 @@
 import React from "react";
 import Format from "./helpers/format.js";
+import { FaRegQuestionCircle } from "react-icons/fa";
+import ReactTooltip from 'react-tooltip';
 class CardInput extends React.Component {
 	constructor(props) {
 		super(props);
@@ -48,7 +50,17 @@ class CardInput extends React.Component {
 
 		return (
 			<div className={"card-header-input " + "bubble"}>
-				<label>{this.props.label}</label>
+				<label>
+					{this.props.label}
+					{this.props.name == "rate" &&
+						<span style={{ color: "#FF6200" }}>
+							<FaRegQuestionCircle data-tip data-for='APRTooltip' />
+							<ReactTooltip id='APRTooltip'>
+							<span>Interest is essentially a charge to the borrower for the use of an asset</span>
+							</ReactTooltip>
+						</span>
+					}
+				</label>
 				<div className="input-wrapper">
 					<input
 						type="text"

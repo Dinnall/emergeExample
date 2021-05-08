@@ -246,6 +246,12 @@ button.view-report:hover {
   align-items: center;
 }
 
+.card-error {
+  color: red;
+  text-align: center;
+  width: 100%;
+}
+
 @media (max-width: 1300px) {
   .single-card .card-header {
     /* flex-wrap: wrap; */

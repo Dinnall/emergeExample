@@ -21,7 +21,6 @@ function Accordion(props) {
             setActive === "active" ? "accordion__icon" : "accordion__icon rotate"
         );
     }
-    console.log("props.content:", props.content.props.schedule)
     return (
         <div className="accordion__section">
             <button className={`accordion ${setActive}`} onClick={toggleAccordion}>

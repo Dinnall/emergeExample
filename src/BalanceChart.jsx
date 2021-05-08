@@ -48,13 +48,14 @@ class BalanceChart extends React.Component {
 						<XYPlot margin={{ left: 100 }} height={height} width={width} xType="ordinal">
 							<VerticalGridLines />
 							<HorizontalGridLines />
-							<XAxis />
+							<XAxis title="Years to payoff" />
 							<YAxis
 								tickFormat={v => Format.usd(v)}
+								title="Cards balance"
 							/>
 							<VerticalBarSeries
 								data={data}
-								color={"#ff6f31"}
+								color={this.props.color || "#434343"}
 								barWidth={0.25}
 								style={{ rx: 3, ry: 3 }}
 							/>

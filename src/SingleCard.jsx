@@ -8,7 +8,8 @@ class SingleCard extends React.Component {
     super(props);
     this.state = {
       data: this.props.data,
-      calculated: false
+      calculated: false,
+      error: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.calculate = this.calculate.bind(this);
@@ -43,6 +44,9 @@ class SingleCard extends React.Component {
             label="Minimum Payment Due"
           />
           <button className="calculate" onClick={this.calculate}>Calculate</button>
+          {this.state.error &&
+            <span className="card-error">{this.state.error}</span>
+          }
         </div>
         {/* <div className="card-summary" ref={el => (this.componentRef = el)}>
 					<CardResult label="Monthly payment" value={Format.usd(Result.monthly * 100)} />
@@ -106,9 +110,21 @@ class SingleCard extends React.Component {
     if (typeof current[name] !== "undefined") {
       current[name] = value;
       this.setState({ data: current });
+      if (name === "extra")
+        this.props.update(current);
+      this.setState({ error: false });
     }
   }
-  calculate() {
+  calculate(data = false) {
+    console.log(this.state.data);
+    if (parseInt(this.state.data.minimum) === 0) {
+      this.setState({ error: "Minimum payment cant be zero" });
+      return;
+    }
+    if (parseInt(this.state.data.balance) === 0) {
+      this.setState({ error: "Card balance cant be zero" });
+      return;
+    }
     this.setState({ calculated: true });
     this.props.update(this.state.data);
   }

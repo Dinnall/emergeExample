@@ -70,7 +70,6 @@ class BalanceChartTwin extends React.Component {
             });
         }
 
-        console.log(Result);
         return (
             <div className="BalanceChartTwin">
                 <div className="legend">
@@ -79,12 +78,16 @@ class BalanceChartTwin extends React.Component {
                 </div>
                 <AutoSizer>
                     {({ width, height }) => (
+
                         <XYPlot margin={{ left: 100 }} height={height} width={width} xType="ordinal">
                             <VerticalGridLines />
                             <HorizontalGridLines />
-                            <XAxis />
+                            <XAxis
+                                title="Years to payoff"
+                            />
                             <YAxis
                                 tickFormat={v => Format.usd(v)}
+                                title="Cards balance"
                             />
                             <VerticalBarSeries
                                 data={data}

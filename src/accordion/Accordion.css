@@ -8,8 +8,8 @@
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-    background-color: #eee;
-    color: #444;
+    background: var(--purple);
+    color: #f2f2f2;
     cursor: pointer;
     padding: 18px;
     display: flex;
@@ -22,7 +22,8 @@
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .accordion:hover,
 .active {
-    background-color: #ccc;
+      background: var(--darkCharcoal);
+      color: white;
 }
 
 /* Style the accordion content title */
@@ -56,4 +57,16 @@
     font-weight: 400;
     font-size: 14px;
     padding: 18px;
+}
+
+
+.accordion__section {
+    margin: 15px 0;
+    border: 3px solid var(--purple);
+}
+
+.accordion__section,
+.accordion,
+.accordion__content {
+    border-radius: 16px;
 }

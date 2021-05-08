@@ -18,7 +18,6 @@ class Report extends React.Component {
 			totalBalance += parseFloat(singleCard.balance);
 		});
 
-		console.log("Result.schedule:", Result.schedule)
 		return (<div className="report">
 			<div className="report-inner" ref={el => (this.componentRef = el)}>
 				<ReactToPrint
@@ -51,15 +50,14 @@ class Report extends React.Component {
 					</p>
 				}
 
+				<DebtSummary cards={this.props.cards} addExtra={this.props.addExtra} />
 				<h3>Debt payoff is estimated at {Format.months(Result.payoff)}</h3>
-				<BalanceChart schedule={Result.schedule} />
+				<BalanceChart totalBalance={totalBalance} schedule={Result.schedule} color={this.props.addExtra ? '#ff6f31' : '#434343'} />
 
 				<Accordion
 					title="View your credit card payment schedule"
 					content={<Schedule schedule={Result.schedule} />}
 				/>
-
-				<DebtSummary cards={this.props.cards} addExtra={this.props.addExtra}/>
 
 			</div>
 		</div>);

@@ -46,7 +46,7 @@ var Format = {
 	relativeMonth: function(n){
 		let D = new Date();
 		D.setMonth( D.getMonth() + n );
-		return `${Format.monthName[ D.getMonth() ]} ${D.getDate()}, ${ D.getFullYear() }`;
+		return `${Format.monthName[ D.getMonth() ]}, ${ D.getFullYear() }`;
 	},
 	getOnlyNumber: function(inp){
 		if(!isNaN(inp) && inp < 100 && inp>0){
