@@ -27,7 +27,7 @@ class SingleCard extends React.Component {
             value={this.state.data.balance}
             type="big"
             onChange={this.handleChange}
-            label="Credit Card Balance"
+            label="What is your current credit card balance?"
           />
           <CardInput
             name="rate"
@@ -41,7 +41,7 @@ class SingleCard extends React.Component {
             value={this.state.data.minimum}
             type="big"
             onChange={this.handleChange}
-            label="Minimum Payment Due"
+            label="What is your minimum payment due each month?"
           />
           <button className="calculate" onClick={this.calculate}>Calculate</button>
           {this.state.error &&
@@ -66,14 +66,14 @@ class SingleCard extends React.Component {
           )} */}
 
           {/* moved add new card button to SingleCard  */}
-          <button
+          {/* <button
             className="add-new-card pointer"
             onClick={() => this.props.add()}
             style={{ fontSize: "x-large" }}
           >
             <FiPlus />
             Add new card
-          </button>
+          </button> */}
 
           {this.props.remove && (
             <div
@@ -85,13 +85,13 @@ class SingleCard extends React.Component {
             </div>
           )}
         </div>
-        <div className="card-additional" style={{ display: this.state.calculated ? '' : 'none', fontSize: "x-large" }}>
+        <div className="card-additional" style={{ display: this.state.calculated ? '' : 'none', fontSize: "x-large", color: "#33208e", fontWeight: "bold" }}>
           <CardInput
             name="extra"
             value={this.state.data.extra}
             type="bubble"
             onChange={this.handleChange}
-            label="Enter additional payments to see how if affects you payoff date and interest paid"
+            label="Can you pay a little more this month? Enter any additional amount to see how this might effect your total."
             slider={true}
           />
         </div>

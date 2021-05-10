@@ -53,7 +53,7 @@
 .single-card .card-header-input label {
   opacity: 10.8;
   width: 180px;
-  padding-right: 33px;
+  /* padding-right: 33px;  */
 }
 
 .single-card .card-header-input.big {
@@ -157,7 +157,7 @@ input::placeholder {
   border: 2px solid #cccccc;
   border-radius: 6px;
   color: black;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .single-card .card-header-input.bubble input:not([type="range"]):focus {
