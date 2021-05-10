@@ -18,7 +18,8 @@ class BigResultsSaved extends React.Component {
                 <label style={{ color: "#FF6200", fontSize: "x-large", display: "flex", alignItems: "center" }}>
                     Interest Saved <FaRegQuestionCircle data-tip data-for='interestSavedTooltip' />
                     <ReactTooltip id='interestSavedTooltip'>
-                        <span>This is the tooltip</span>
+                        <span>
+                            This is showing you how much money you saved that would have gone towards interest by paying every month.</span>
                     </ReactTooltip>
                 </label>
                 <span style={{ color: "#FF6200" }}>{Format.usd(savedInterest * 100)}</span>
