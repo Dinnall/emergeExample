@@ -41,7 +41,7 @@ class SingleCard extends React.Component {
             value={this.state.data.minimum}
             type="big"
             onChange={this.handleChange}
-            label="What is your minimum payment due each month?"
+            label="What is your minimum payment due this each month?"
           />
           <button className="calculate" onClick={this.calculate}>Calculate</button>
           {this.state.error &&
