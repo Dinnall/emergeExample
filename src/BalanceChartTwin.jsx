@@ -87,7 +87,7 @@ class BalanceChartTwin extends React.Component {
                             />
                             <YAxis
                                 tickFormat={v => Format.usd(v)}
-                                title="Cards balance"
+                                title="Card balance"
                             />
                             <VerticalBarSeries
                                 data={data}
