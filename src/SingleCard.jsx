@@ -91,7 +91,7 @@ class SingleCard extends React.Component {
             value={this.state.data.extra}
             type="bubble"
             onChange={this.handleChange}
-            label="Can you pay a little more this month? Enter any additional amount to see how this might effect your total."
+            label="Can you pay a little more per month? Enter any additional amount to see how this might effect your total."
             slider={true}
           />
         </div>
