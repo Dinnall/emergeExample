@@ -225,17 +225,28 @@ input::placeholder {
   cursor: pointer;
 }
 
-button.view-report:hover {
-  background: #1A509C;
-  color: white;
+button.view-report {
+  border: none;
+  border-bottom: 2px solid #cc8821;
+  cursor: pointer;
+  background: #ffaa29;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
-.add-card:hover,
+
+button.view-report:hover {
+  background: #cc8821;
+  color: #f2f2f2;
+}
+
+/* .add-card:hover,
 .view-report:hover {
   background: #1A509C;
   color: white;
   border-color: white;
-}
+} */
 
 .add-new-card {
   background: none;
