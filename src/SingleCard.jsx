@@ -2,6 +2,8 @@ import React from "react";
 import { FiPlus } from "react-icons/fi";
 import CardInput from "./CardInput.jsx";
 import Calc from "./helpers/calc.js";
+import Format from "./helpers/format.js";
+
 
 class SingleCard extends React.Component {
   constructor(props) {
@@ -16,6 +18,9 @@ class SingleCard extends React.Component {
   }
   render() {
     let Result = Calc.single(this.state.data);
+    console.log("extra amount:", Number(this.state.data.extra))
+    console.log("min payment:", Number(this.state.data.minimum))
+    console.log("new total:", Number(this.state.data.minimum) + Number(this.state.data.extra))
     return (
       <div className="single-card">
         <div
@@ -94,6 +99,11 @@ class SingleCard extends React.Component {
             label="Can you pay a little more per month? Enter any additional amount to see how this might effect your total."
             slider={true}
           />
+          <span>   
+            <div className="newTotal">
+                <p>Monthly + Additional payment: {Format.usd(Number(this.state.data.minimum) + Number(this.state.data.extra))}</p>
+            </div>
+          </span>
         </div>
       </div>
     );

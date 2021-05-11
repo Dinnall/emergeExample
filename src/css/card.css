@@ -124,6 +124,24 @@
   padding-top: 8px;
 }
 
+
+.newTotal {
+  /* display: block; */
+  text-align: center;
+  /* background: #f45689;
+  border-bottom: 2px solid green; */
+
+    line-height: 1.428571429;
+    /* color: #666; */
+    background-color: lightseagreen;
+    color: #fff;
+    margin-top: 2.2rem;
+    padding-top: 0.937rem;
+    border-radius: 6px;
+    border-color: #bee5eb;
+
+}
+
 input {
   color: yellow;
 }
