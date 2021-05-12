@@ -40,7 +40,7 @@ class DebtSummary extends React.Component {
 								<td>{Format.usd(singleResult.monthly * 100, false)}</td>
 								<td>{Format.usd(singleResult.interestPaid * 100, false)}</td>
 								<td>{Format.usd(singleResult.total * 100, false)}</td>
-								<td>{Format.months(singleResult.payoff)}</td>
+								<td>{Format.relativeMonth(Result.payoff)}</td>
 							</tr>);
 						})}
 					</tbody>
@@ -52,7 +52,7 @@ class DebtSummary extends React.Component {
 							<td>{Format.usd(Result.monthly * 100, false)}</td>
 							<td>{Format.usd(Result.interestPaid * 100, false)}</td>
 							<td>{Format.usd(Result.total * 100, false)}</td>
-							<td>{Format.months(Result.payoff)}</td>
+							<td>{Format.relativeMonth(Result.payoff)}</td>
 						</tr>
 					</tfoot>
 				</table>

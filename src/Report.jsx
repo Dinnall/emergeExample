@@ -51,7 +51,7 @@ class Report extends React.Component {
 				}
 
 				<DebtSummary cards={this.props.cards} addExtra={this.props.addExtra} />
-				<h3>Debt payoff is estimated at {Format.months(Result.payoff)}</h3>
+				<h3>Estimated payoff will by {Format.relativeMonth(Result.payoff)}</h3>
 				<BalanceChart totalBalance={totalBalance} schedule={Result.schedule} color={this.props.addExtra ? '#ff6f31' : '#434343'} />
 
 				<Accordion
