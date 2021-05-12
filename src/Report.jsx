@@ -38,14 +38,13 @@ class Report extends React.Component {
 				{
 					this.props.addExtra ?
 						<p>
-							You owe a total of {Format.usd(totalBalance)} having a total monthly payment of {Format.usd(Result.monthly * 100)}.
+						Your current total of {Format.usd(totalBalance)} will take you {Format.months(Result.payoff)} to payoff, if you continue to make a monthly payment of {Format.usd(Result.monthly * 100)}.
 						If you continue to make this same amount of additional payments it will take you {Format.months(Result.payoff)} to payoff this debt.
 						Your total interest paid will now be {Format.usd(Result.interestPaid * 100)}.
 					</p>
 						:
 						<p>
-							You owe a total of {Format.usd(totalBalance)} having a total monthly payment of {Format.usd(Result.monthly * 100)}.
-						If you continue to make the minimum payments it will take you {Format.months(Result.payoff)} to payoff this debt.
+						Your current total of {Format.usd(totalBalance)} will take you {Format.months(Result.payoff)} to payoff, if you continue to make a monthly payment of {Format.usd(Result.monthly * 100)}.
 						The total interest paid will be {Format.usd(Result.interestPaid * 100)}.
 					</p>
 				}
