@@ -18,7 +18,8 @@
     "react-to-print": "2.12.4",
     "react-tooltip": "^4.2.18",
     "react-virtualized-auto-sizer": "^1.0.5",
-    "react-vis": "1.11.7"
+    "react-vis": "1.11.7",
+    "tailwindcss": "^2.1.2"
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8",

@@ -7,7 +7,7 @@ class Schedule extends React.Component {
 				<table>
 					<thead>
 						<tr>
-							<th></th>
+							<th>Month</th>
 							<th>Payment</th>
 							<th>Interest</th>
 							<th>Total Principal</th>

@@ -4,6 +4,8 @@ import BigResultsSaved from "./BigResultsSaved";
 import Report from "./Report";
 import SingleCard from "./SingleCard.jsx";
 import BalanceChartTwin from "./BalanceChartTwin.jsx";
+import EmptyInstruction from "./EmptyInstruction";
+
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
@@ -24,6 +26,7 @@ class Calculator extends React.Component {
     };
   }
   render() {
+    console.log("cal comp SingleCard:", this.state )
     let showAdditional = false;
     this.state.cards.forEach(SingleCard => {
       if (SingleCard.extra > 0) {
@@ -53,6 +56,7 @@ class Calculator extends React.Component {
 					</button> */}
         </div>
         <div className="right-column">
+
           <div className="twin-results">
             <BigResult
               cards={this.state.cards}

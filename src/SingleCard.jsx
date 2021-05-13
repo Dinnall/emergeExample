@@ -3,6 +3,8 @@ import { FiPlus } from "react-icons/fi";
 import CardInput from "./CardInput.jsx";
 import Calc from "./helpers/calc.js";
 import Format from "./helpers/format.js";
+import EmptyInstruction from "./EmptyInstruction";
+
 
 
 class SingleCard extends React.Component {
@@ -18,9 +20,7 @@ class SingleCard extends React.Component {
   }
   render() {
     let Result = Calc.single(this.state.data);
-    console.log("extra amount:", Number(this.state.data.extra))
-    console.log("min payment:", Number(this.state.data.minimum))
-    console.log("new total:", Number(this.state.data.minimum) + Number(this.state.data.extra))
+   
     return (
       <div className="single-card">
         <div
@@ -46,7 +46,7 @@ class SingleCard extends React.Component {
             value={this.state.data.minimum}
             type="big"
             onChange={this.handleChange}
-            label="What is your minimum payment due this each month?"
+            label="What is the minimum payment due?"
           />
           <button className="calculate" onClick={this.calculate}>Calculate</button>
           {this.state.error &&
@@ -85,7 +85,7 @@ class SingleCard extends React.Component {
               className="card-remove pointer"
               onClick={() => this.props.remove()}
               style={{ fontSize: "x-large" }}
-            >
+             >
               Remove
             </div>
           )}
@@ -96,12 +96,12 @@ class SingleCard extends React.Component {
             value={this.state.data.extra}
             type="bubble"
             onChange={this.handleChange}
-            label="Can you pay a little more per month? Enter any additional amount to see how this might effect your payoff."
+            label="Can you pay a little more than your minimum payment? Enter it here to see how it will affect you payoff"
             slider={true}
           />
           <span>   
             <div className="newTotal">
-              <p>Monthly minimum + Additional payment: {Format.usd(Number(this.state.data.minimum) + Number(this.state.data.extra))}</p>
+              <p>Minimum + Additional payment: {Format.usd(Number(this.state.data.minimum) + Number(this.state.data.extra))}</p>
             </div>
           </span>
         </div>
