@@ -15,7 +15,7 @@ class BalancePie extends React.Component {
 		principalPercent = Calc.round( principalPercent );
 		interestPercent = Calc.round( interestPercent );
 		let data = [
-			{angle: this.props.principal, label: 'Total Principal', color: '#091C5A', 'subLabel':`${principalPercent}%`},
+			{angle: this.props.principal, label: '', color: '#091C5A', 'subLabel':`${principalPercent}%`},
 			{angle: this.props.interest, label: 'Interest Paid', color: '#FF6600', 'subLabel':`${interestPercent}%`},
 		];
 		return (

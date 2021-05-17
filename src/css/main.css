@@ -76,7 +76,8 @@ input {
 .cards-container {
   display: flex;
   flex-direction: column;
-  /* margin-right: 100px; */
+  margin-right: 100px;
+  margin-left: -58px;
   padding: 0 10px;
   overflow-y: auto;
   overflow-x:hidden;
