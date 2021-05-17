@@ -101,7 +101,7 @@ class SingleCard extends React.Component {
           />
           <span>   
             <div className="newTotal">
-              <p>Minimum + Additional payment= {Format.usd(Number(this.state.data.minimum) + Number(this.state.data.extra))}</p>
+              <p style={{ fontWeight: "bold" }}>Minimum + Additional payment= {Format.usd(Number(this.state.data.minimum) + Number(this.state.data.extra))}</p>
             </div>
           </span>
         </div>
