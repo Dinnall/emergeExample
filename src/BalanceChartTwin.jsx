@@ -24,7 +24,7 @@ class BalanceChartTwin extends React.Component {
 
         let Result = Calc.all(this.props.cards, false);
         let ResultExtra = Calc.all(this.props.cards, true);
-
+        console.log(Result, ResultExtra);
         let totalBalance = 0;
         this.props.cards.forEach(singleCard => {
             totalBalance += parseFloat(singleCard.balance);

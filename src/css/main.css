@@ -9,9 +9,15 @@
   --fucsia: #b40c66;
   --gray: #fafafa;
   --violet: #33208e;
-  --orange: #ffaa29;
+  /*--orange: #ffaa29;*/
   --darkCharcoal : #333333;
   /* --pink: #c24ba3; Add new card button color*/
+  --blue:#091C5A;
+  --lightblue:#4e73ed;
+  --darkorange:#b34700;
+  --orange:#FF6600;
+  --lightorange:#ff893b;
+  --white:#FFFFFF;
 }
 
 body {
@@ -73,25 +79,34 @@ input {
   /* margin-right: 100px; */
   padding: 0 10px;
   overflow-y: auto;
+  overflow-x:hidden;
   max-height: 95vh;
   min-width: 400px;
   max-width: 400px;
 
 }
 
-.right-column {
+.right-column.bordered, .landing-page .container{
   margin: 0 auto;
+  border:1px solid #cccccc55;
+  padding-bottom:80px;
+  border-radius:16px;
+  background: #fafafa;
+  box-shadow:8px 8px 8px rgba(0, 0, 0, .1);
 }
 
-.BalanceChart {
+.BalanceChart{
   width: 90%;
   height: 300px;
 }
 
-.BalanceChartTwin {
+.BalanceChartTwin, .BalancePie{
   width: 100%;
   height: 300px;
   margin: 50px auto 0 auto;
+}
+.BalancePie h3{
+  text-align:center;
 }
 
 .BalanceChartTwin .legend {
@@ -182,6 +197,12 @@ svg[data-tip] {
   .right-column {
     width: 90vw;
   }
+  .TwinPies{
+    flex-wrap: wrap;
+  }
+  .TwinPies .single-pie{
+    width:100% !important;
+  }
 }
 
 @media (max-width: 450px) {
@@ -192,13 +213,27 @@ svg[data-tip] {
   }
 }
 
-@import url("./card.css");
-@import url("./result.css");
-@import url("./report.css");
-@import url("./report-print.css");
+
 
 #interestSavedTooltip span,
 #APRTooltip span {
   font-size: 1em !important;
   font-family: "Roboto", "Helvetica", sans-serif;
+  max-width:100px !important;
 }
+
+.TwinPies{
+  display:flex;
+}
+.TwinPies .single-pie{
+  width:300px;
+  min-width:50%;
+  margin:0 auto;
+}
+
+
+@import url("./card.css");
+@import url("./result.css");
+@import url("./report.css");
+@import url("./report-print.css");
+@import url("./emptyInstruction.css");

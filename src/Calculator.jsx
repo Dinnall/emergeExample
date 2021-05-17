@@ -3,7 +3,7 @@ import BigResult from "./BigResult";
 import BigResultsSaved from "./BigResultsSaved";
 import Report from "./Report";
 import SingleCard from "./SingleCard.jsx";
-import BalanceChartTwin from "./BalanceChartTwin.jsx";
+import TwinPies from "./TwinPies.jsx";
 import EmptyInstruction from "./EmptyInstruction";
 
 class Calculator extends React.Component {
@@ -23,6 +23,7 @@ class Calculator extends React.Component {
     this.state = {
       cards: currentCards,
       report: 0,
+      calculated:false,
     };
   }
   render() {
@@ -47,6 +48,9 @@ class Calculator extends React.Component {
                 remove={
                   this.state.cards.length > 1 ? () => this.remove(i) : false
                 }
+                onCalculate={
+                  () => this.setState({calculated: true})
+                }
               />
             );
           })}
@@ -55,8 +59,8 @@ class Calculator extends React.Component {
 						Add new card
 					</button> */}
         </div>
-        <div className="right-column">
-
+          {this.state.calculated ?
+        <div className="right-column bordered">
           <div className="twin-results">
             <BigResult
               cards={this.state.cards}
@@ -71,8 +75,9 @@ class Calculator extends React.Component {
               />
             }
           </div>
-          <BalanceChartTwin cards={this.state.cards} />
+          <TwinPies cards={this.state.cards}/>
         </div>
+        : <div className="right-column"> <EmptyInstruction /> </div>}
         {this.state.report !== 0 && (
           <Report
             cards={this.state.cards}

@@ -23,7 +23,7 @@
 	display: block;
 	width: 100%;
 	text-align: right;
-	color: var(--fucsia);
+	color: var(--orange);
 	cursor: pointer;
 }
 
@@ -56,7 +56,10 @@
 .report-inner thead,
 .report-inner tfoot {
 	color: white;
-	background: var(--purple);
+	background: var(--blue);
+}
+.report-inner tfoot {
+	background: var(--orange);
 }
 
 .report-inner td,
@@ -77,9 +80,27 @@
 }
 
 .report-inner tbody tr:hover {
-	background: var(--lightpink);
+	background: var(--lightblue);
 }
 
 .report-inner tbody td:hover {
-	background: var(--pink);
+	background: var(--blue);
+	color:white;
+}
+
+.showMore{
+	text-align:center !important;
+	user-select:none;
+	cursor:pointer;
+	text-transform: uppercase;
+}
+
+.showMore svg{
+	vertical-align: middle;
+	margin-left:15px;
+	transform: rotate(90deg);
+}
+
+.showMore svg.less{
+	transform: rotate(270deg);
 }

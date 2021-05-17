@@ -2,13 +2,17 @@ import React from 'react';
 import Calc from './helpers/calc.js';
 import Format from './helpers/format.js';
 import BalanceChart from './BalanceChart.jsx';
+import BalancePie from './BalancePie.jsx';
 import DebtSummary from './DebtSummary.jsx';
-import Schedule from './Schedule.jsx';
 import './css/report-print.css';
 import Accordion from "./accordion/Accordion";
 
 
 import ReactToPrint from 'react-to-print';
+import { jsPDF } from "jspdf";
+
+
+const ref = React.createRef();
 
 class Report extends React.Component {
 	render() {
@@ -19,15 +23,16 @@ class Report extends React.Component {
 		});
 
 		return (<div className="report">
-			<div className="report-inner" ref={el => (this.componentRef = el)}>
+			<div className="report-inner" ref={ref}>
 				<ReactToPrint
 					trigger={() => {
 						// NOTE: could just as easily return <SomeComponent />. Do NOT pass an `onClick` prop
 						// to the root node of the returned component as it will be overwritten.
 						return <span className="print-report">Print this report</span>;
 					}}
-					content={() => this.componentRef}
+					content={() => ref}
 				/>
+				<span onClick={this.toPDF} className="print-report">Download this report</span>
 				<span className="close-report" onClick={() => this.props.report()}>Close report</span>
 				{
 					this.props.addExtra ?
@@ -51,15 +56,25 @@ class Report extends React.Component {
 
 				<DebtSummary cards={this.props.cards} addExtra={this.props.addExtra} />
 				<h3>Estimated payoff will by {Format.relativeMonth(Result.payoff)}</h3>
-				<BalanceChart totalBalance={totalBalance} schedule={Result.schedule} color={this.props.addExtra ? '#ff6f31' : '#434343'} />
+				<BalancePie interest={Result.interestPaid} principal={Result.totalPrincipal} />
 
 				<Accordion
 					title="View your credit card payment schedule"
-					content={<Schedule schedule={Result.schedule} />}
+					schedule={Result.schedule}
 				/>
 
 			</div>
 		</div>);
+	}
+	toPDF(){
+		var pdf = new jsPDF('p', 'px', [800, 1280]);
+		pdf.html(document.querySelector('.report-inner'), {
+			callback: (pdf) => {
+				pdf.save('report.pdf');
+			},
+			format: 'PNG',
+			pagesplit: true,
+		});
 	}
 }
 export default Report;

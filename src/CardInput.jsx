@@ -2,6 +2,8 @@ import React from "react";
 import Format from "./helpers/format.js";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import ReactTooltip from 'react-tooltip';
+import InputRange from 'react-input-range';
+import 'react-input-range/lib/css/index.css';
 class CardInput extends React.Component {
 	constructor(props) {
 		super(props);
@@ -47,6 +49,7 @@ class CardInput extends React.Component {
 			default:
 				break;
 		}
+		console.log(min, max);
 
 		return (
 			<div className={"card-header-input " + "bubble"}>
@@ -55,8 +58,8 @@ class CardInput extends React.Component {
 					{this.props.name == "rate" &&
 						<span style={{ color: "#FF6200" }}>
 							<FaRegQuestionCircle data-tip data-for='APRTooltip' />
-							<ReactTooltip id='APRTooltip'>
-							<span>Interest is essentially a charge to the borrower for the use of an asset</span>
+							<ReactTooltip id='APRTooltip' multiline={true}>
+							<span>Interest is essentially <br /> a charge to the borrower <br /> for the use of an asset</span>
 							</ReactTooltip>
 						</span>
 					}
@@ -71,7 +74,7 @@ class CardInput extends React.Component {
 						onBlur={() => this.setState({ editing: false })}
 					/>
 					{this.props.type === "bubble" && this.props.slider === true && (
-						<input
+						/*<input
 							type="range"
 							step={step}
 							min={min}
@@ -79,6 +82,24 @@ class CardInput extends React.Component {
 							value={this.props.value}
 							name={this.props.name}
 							onChange={this.props.onChange}
+						/>*/
+						<InputRange
+						    step={step}
+							minValue={min}
+							maxValue={max}
+							value={parseFloat(this.props.value)}
+							name={this.props.name}
+							onChange={
+								value => {
+									this.props.onChange({
+										target:{
+											name: this.props.name,
+											value: value.toString()
+										}
+									})
+								}
+							}
+							formatLabel={val => Format.usd(val)}
 						/>
 					)}
 				</div>

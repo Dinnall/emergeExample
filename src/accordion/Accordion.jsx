@@ -31,7 +31,10 @@ function Accordion(props) {
                 <div
                     className="accordion__text"
                 >
-                    {props.content}
+                    <Schedule schedule={props.schedule} onMore={() => {
+                        console.log('xd');
+                        setHeightState(`${content.current.scrollHeight}px`);
+                    }}/>
                 </div>
             </div>
         </div>

@@ -7,6 +7,7 @@ var Calc = {
 			payoff: 0,
 			total: 0,
 			interestPaid:0,
+			totalPrincipal: 0,
 			schedule: []
 		};
 		if(typeof data !== 'object' || typeof data.balance === 'undefined' || typeof data.rate === 'undefined' || typeof data.minimum === 'undefined') return result;
@@ -23,6 +24,7 @@ var Calc = {
 		let response = {
 			payoff:0,
 			total:0,
+			totalPrincipal:0,
 			schedule: []
 		}
 		let currBalance = data.balance;
@@ -58,6 +60,7 @@ var Calc = {
 			});
 			response.payoff++;
 			response.total += singlePayment;
+			response.totalPrincipal += singlePrincipal;
 		}
 		response.total = this.round(response.total);
 		return response;
@@ -68,6 +71,7 @@ var Calc = {
 			payoff: 0,
 			total: 0,
 			interestPaid:0,
+			totalPrincipal:0,
 			schedule: []
 		};
 		cards.forEach(singleCard => {
@@ -76,8 +80,11 @@ var Calc = {
 			if(singleResult.payoff > result.payoff) result.payoff = singleResult.payoff;
 			result.total += singleResult.total;
 			result.interestPaid += singleResult.interestPaid;
+			result.totalPrincipal += singleResult.totalPrincipal;
 			result.schedule = this.mergeSchedules(result.schedule, singleResult.schedule);
 		})
+		result.interestPaid = this.round( result.interestPaid );
+		result.totalPrincipal = this.round( result.totalPrincipal );
 		return result;
 	},
 	mergeSchedules: function(a, b){

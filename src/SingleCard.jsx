@@ -126,7 +126,6 @@ class SingleCard extends React.Component {
     }
   }
   calculate(data = false) {
-    console.log(this.state.data);
     if (parseInt(this.state.data.minimum) === 0) {
       this.setState({ error: "Minimum payment cant be zero" });
       return;
@@ -136,6 +135,7 @@ class SingleCard extends React.Component {
       return;
     }
     this.setState({ calculated: true });
+    this.props.onCalculate();
     this.props.update(this.state.data);
   }
 }

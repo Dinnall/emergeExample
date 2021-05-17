@@ -8,7 +8,7 @@
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-    background: var(--purple);
+    background: var(--blue);
     color: #f2f2f2;
     cursor: pointer;
     padding: 18px;
@@ -62,11 +62,13 @@
 
 .accordion__section {
     margin: 15px 0;
-    border: 3px solid var(--purple);
+    border: 3px solid var(--blue);
 }
 
 .accordion__section,
-.accordion,
 .accordion__content {
     border-radius: 16px;
+}
+.accordion{
+    border-radius: 10px;
 }

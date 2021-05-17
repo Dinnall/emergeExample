@@ -14,15 +14,16 @@ class BigResultsSaved extends React.Component {
 
         return (<div className="big-result">
             <div className="result-main single-result">
-                <label>Paying a little more than required minimum</label>
-                <label style={{ color: "#FF6200", fontSize: "x-large", display: "flex", alignItems: "center" }}>
-                    Interest Saved <FaRegQuestionCircle data-tip data-for='interestSavedTooltip' />
-                    <ReactTooltip id='interestSavedTooltip'>
-                        <span>
-                            This is showing you how much money you saved that would have gone towards interest by paying every month.</span>
+                <label>Your interest when you pay over the minimum payment</label>
+                <label style={{ fontSize: "x-large" }}>Interest Paid</label>
+                <span>{Format.usd(Result.interestPaid * 100)}</span>
+                
+                <label style={{ fontSize: "1.2em", fontWeight:"bold", display: "flex", alignItems: "center", marginBottom: -23 }}>
+                    Saving You <span style={{ color: "#FF6200", marginLeft: 8 }}>{Format.usd(savedInterest * 100)}</span> <FaRegQuestionCircle data-tip data-for='interestSavedTooltip' />
+                    <ReactTooltip id='interestSavedTooltip' multiline={true}>
+                        <span> This is showing you how much money <br /> you saved that would have gone <br /> towards interest by paying every month.</span>
                     </ReactTooltip>
                 </label>
-                <span style={{ color: "#FF6200" }}>{Format.usd(savedInterest * 100)}</span>
             </div>
             <div className="result-secondary">
                 <div className="single-result">

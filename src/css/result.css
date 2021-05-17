@@ -24,8 +24,8 @@
 }
 
 
-.big-result .result-main span {
-	font-size: 4vw;
+.big-result .result-main > span {
+	font-size: 2vw;
 	font-family: 'Oswald';
 }
 
@@ -109,9 +109,6 @@
 	background: var(--purple);
 } */
 
-.view-report:hover {
-	background: #fff;
-}
 
 
 .rv-xy-plot__axis--vertical .rv-xy-plot__axis__title g {

@@ -50,7 +50,6 @@ var Format = {
 	},
 	getOnlyNumber: function(inp){
 		if(!isNaN(inp) && inp < 100 && inp>0){
-			console.log(inp);
 			return ['0', (inp/10).toString().replaceAll(/[^0-9]/g, '')];
 		}
 		let number = inp.toString().replaceAll(/[^0-9]/g, '');

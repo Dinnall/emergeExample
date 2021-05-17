@@ -16,7 +16,6 @@
   margin-bottom: 8px;
   /* box-shadow: 3px 3px 5px #00000011; */
   /* border: 3px solid var(--violet); */
-  margin-top: 3.5rem;
   min-width: 350px;
   /* margin-right: 100px; */
   box-shadow: 0 0 10px #ccc;
@@ -95,9 +94,9 @@
   margin: 15px auto;
   padding: 4px 32px;
   border: none;
-  border-bottom: 2px solid #cc8821;
+  border-bottom: 2px solid var(--darkorange);
   cursor: pointer;
-  background: #ffaa29;
+  background: var(--orange);
   border-radius: 8px;
   color: white;
   font-weight: bold;
@@ -105,7 +104,7 @@
 }
 
 .single-card .card-header .calculate:hover {
-  filter: brightness(1.1);
+  filter: brightness(0.9);
 }
 
 .single-card .card-additional .card-header-input {
@@ -133,12 +132,13 @@
 
     line-height: 1.428571429;
     /* color: #666; */
-    background-color: lightseagreen;
+    background-color: var(--blue);
     color: #fff;
     margin-top: 2.2rem;
     padding-top: 0.937rem;
     border-radius: 6px;
     border-color: #bee5eb;
+    font-weight: 100;
 
 }
 
@@ -245,9 +245,9 @@ input::placeholder {
 
 button.view-report {
   border: none;
-  border-bottom: 2px solid #cc8821;
+  border-bottom: 2px solid var(--darkorange);
   cursor: pointer;
-  background: #ffaa29;
+  background: var(--orange);
   border-radius: 8px;
   font-weight: bold;
   font-size: 1.2em;
@@ -255,8 +255,7 @@ button.view-report {
 
 
 button.view-report:hover {
-  background: #cc8821;
-  color: #f2f2f2;
+  filter:brightness(0.9);
 }
 
 /* .add-card:hover,
@@ -331,4 +330,30 @@ button.view-report:hover {
   .single-card .card-summary .card-result {
     margin: 8px 0;
   }
+}
+
+
+.input-range{
+  margin-top:25px;
+}
+.input-range__track{
+  height:1rem !important;
+  border-radius: 50px !important;
+}
+.input-range__track--active{
+  border-radius:50px 0 0 50px !important;
+}
+.input-range__slider
+{
+  margin-top:-1rem !important;
+  top:0 !important;
+}
+.input-range__slider,
+.input-range__track--active{
+  border-color:var(--blue) !important;
+  background: var(--blue) !important;
+}
+
+.input-range__label{
+  color:#000 !important;
 }

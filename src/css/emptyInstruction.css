@@ -1,7 +1,6 @@
 .container {
     width: 1170px;
-    padding-right: 15px;
-    padding-left: 15px;
+    max-width: 75vw;
     margin: auto;
 }
 
@@ -11,7 +10,10 @@
     position: relative;
     background-color: #FFF;
 }
-
+.landing-page .container{
+    display:flex;
+    padding-bottom: 0 !important;
+}
 .landing-page .header-area {
     display: flex;
     padding: 25px 0 0;
@@ -51,23 +53,23 @@
 }
 
 .landing-page .info {
-    width: 35%;
-    float: left;
-    margin-top: 130px;
+    width: 50%;
+    padding:100px 0 0 40px;
+
 }
 
 .landing-page .info h1 {
     font-size: 44px;
     margin: 0 0 20px;
     line-height: 1.4;
-    color: #5d5d5d;
+    color:var(--blue);
 }
 
 .landing-page .info p {
     margin: 0;
     line-height: 1.6;
     font-size: 15px;
-    color: #5d5d5d;
+    color:var(--blue);
 }
 
 .landing-page .info button {
@@ -82,12 +84,12 @@
 
 .landing-page .image {
     width: 50%;
-    float: right;
-    margin-top: 35px;
+    margin-bottom: -4px;
 }
 
 .landing-page .image img {
     max-width: 100%;
+    border-radius:16px 0 0 16px !important;
 }
 
 .clearfix {
