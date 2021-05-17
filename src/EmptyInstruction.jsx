@@ -11,7 +11,7 @@ class EmptyInstruction extends React.Component {
                         </div>
                         <div className="info">
                             <h1>Fill out your card balance details to calculate payoff results.</h1>
-                            <p> You could get closer to being debt-free than you think</p>
+                            <p> You could be closer to being debt-free than you think</p>
                         </div>
                         
                     </div>
