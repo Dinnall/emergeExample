@@ -34,7 +34,7 @@ class Report extends React.Component {
 				/>
 				<span onClick={this.toPDF} className="print-report">Download this report</span>
 				<span className="close-report" onClick={() => this.props.report()}>Close report</span>
-				{
+				{/* {
 					this.props.addExtra ?
 						<h4>Paying a little more than required minimum total will take {Format.months(Result.payoff)} to payoff your debt.</h4>
 						:
@@ -52,11 +52,11 @@ class Report extends React.Component {
 						Your current total of {Format.usd(totalBalance)} will take you {Format.months(Result.payoff)} to payoff, if you continue to make a monthly payment of {Format.usd(Result.monthly * 100)}.
 						The total interest paid will be {Format.usd(Result.interestPaid * 100)}.
 					</p>
-				}
+				} */}
 
-				<DebtSummary cards={this.props.cards} addExtra={this.props.addExtra} />
 				<h3>Estimated payoff will by {Format.relativeMonth(Result.payoff)}</h3>
 				<BalancePie interest={Result.interestPaid} principal={Result.totalPrincipal} />
+				<DebtSummary cards={this.props.cards} addExtra={this.props.addExtra} />
 
 				<Accordion
 					title="View your credit card payment schedule"

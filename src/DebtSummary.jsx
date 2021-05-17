@@ -34,7 +34,7 @@ class DebtSummary extends React.Component {
 						{this.props.cards.map((singleCard, i) => {
 							let singleResult = Calc.single(singleCard, this.props.addExtra);
 							return (<tr key={i}>
-								<th>Credit Card #{i + 1}</th>
+								<th>Credit Card </th>
 								<td>{Format.usd(singleCard.balance, false)}</td>
 								<td>{Format.percent(singleCard.rate, 'rate')}</td>
 								<td>{Format.usd(singleResult.monthly * 100, false)}</td>
