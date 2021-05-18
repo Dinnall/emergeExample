@@ -22,7 +22,9 @@ class BigResultsSaved extends React.Component {
                     <img className="coin" src={Coin} />
                     Saving You <span style={{ color: "#FF6200", marginLeft: 8 }}>{Format.usd(savedInterest * 100)}</span> <FaRegQuestionCircle data-tip data-for='interestSavedTooltip' />
                     <ReactTooltip id='interestSavedTooltip' multiline={true}>
-                        <span>Interest saved is the amount you saved by<br /> paying more than the minimum <br />lowering your principal every month.</span>
+                        <span>Paying over your monthly minimum payment <br />
+                        reduces the total interest paid on the debt.
+                        <br /> This means you can use the money saved towards other goals.</span>
                     </ReactTooltip>
                 </label>
             </div>

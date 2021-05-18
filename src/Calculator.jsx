@@ -28,7 +28,7 @@ class Calculator extends React.Component {
 		this.reset = this.reset.bind(this);
 	}
 	render() {
-		console.log("cal comp SingleCard:", this.state )
+		
 		let showAdditional = false;
 		this.state.cards.forEach(SingleCard => {
 			if (SingleCard.extra > 0) {

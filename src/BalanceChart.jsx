@@ -45,13 +45,13 @@ class BalanceChart extends React.Component {
 			<div className="BalanceChart">
 				<AutoSizer>
 					{({ width, height }) => (
-						<XYPlot margin={{ left: 100 }} height={height} width={width} xType="ordinal">
+						<XYPlot margin={{ left: 130 }} height={height} width={width} xType="ordinal">
 							<VerticalGridLines />
 							<HorizontalGridLines />
 							<XAxis title="Years to payoff" />
 							<YAxis
 								tickFormat={v => Format.usd(v)}
-								title="Cards balance"
+								title="Card balance"
 							/>
 							<VerticalBarSeries
 								data={data}

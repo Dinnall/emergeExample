@@ -24,6 +24,10 @@ class Report extends React.Component {
 			totalBalance += parseFloat(singleCard.balance);
 		});
 
+		let amountWithoutMonthlyAdditional = Calc.all(this.props.cards).total;
+		let amountWithExtra = Result.total;
+		let savedInterest = amountWithoutMonthlyAdditional - amountWithExtra;
+
 		return (<div className="report">
 			<div className="report-inner" ref={ref}>
 				<ReactToPrint
@@ -45,9 +49,10 @@ class Report extends React.Component {
 				{
 					this.props.addExtra ?
 						<p>
-						Nice! With your additional payment it brings your total down to {Format.usd(totalBalance)}. This will take you {Format.months(Result.payoff)} to payoff, if you continue to make a monthly payment of {Format.usd(Result.monthly * 100)}.
-						Your total interest paid will now be {Format.usd(Result.interestPaid * 100)}.
-					</p>
+							Nice! With your additional payment of {Format.usd(Number(this.props.cards[0]["extra"]))} it brings down your total payment plus interest down to {Format.usd(totalBalance)} saving you {Format.usd(savedInterest)}.
+						If you continue to make a monthly payment of {Format.usd(amountWithExtra)}, it will take you {Format.months(Result.payoff)} to pay off your current balance of {Format.usd(totalBalance)}. 
+						The revised total interest paid will now be {Format.usd(Result.interestPaid * 100)}.
+					   </p>
 						:
 						<p>
 						If you continue to make a monthly payment of {Format.usd(Result.monthly * 100)}, 
