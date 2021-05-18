@@ -50,8 +50,9 @@ class Report extends React.Component {
 					</p>
 						:
 						<p>
-						Your current total of {Format.usd(totalBalance)} will take you {Format.months(Result.payoff)} to payoff, if you continue to make a monthly payment of {Format.usd(Result.monthly * 100)}.
-						The total interest paid will be {Format.usd(Result.interestPaid * 100)}.
+						If you continue to make a monthly payment of {Format.usd(Result.monthly * 100)}, 
+						it will take you {Format.months(Result.payoff)} to pay off your current balance of {Format.usd(totalBalance)}. 
+						The total interest paid in addition to the balance will be {Format.usd(Result.interestPaid * 100)}.
 					</p>
 				}
 

@@ -8,10 +8,10 @@ class TwinPies extends React.Component {
 		return (
 			<div className="TwinPies">
 				<div className="single-pie">
-					<BalancePie interest={Result.interestPaid} principal={Result.totalPrincipal} title="Minimum payments"/>
+					<BalancePie interest={Result.interestPaid} principal={Result.totalPrincipal} title="Interest Paid vs Principal (%) with minimum payments"/>
 				</div>
 				{ Result.interestPaid !== ResultExtra.interestPaid && <div className="single-pie">
-					<BalancePie interest={ResultExtra.interestPaid} principal={ResultExtra.totalPrincipal} title="Over the minimum payments" />
+					<BalancePie interest={ResultExtra.interestPaid} principal={ResultExtra.totalPrincipal} title="Interest Paid vs Principal (%) with paying over the minimum payment" />
 				</div>
 				}
 			</div>
