@@ -6,6 +6,8 @@ import BalancePie from './BalancePie.jsx';
 import DebtSummary from './DebtSummary.jsx';
 import './css/report-print.css';
 import Accordion from "./accordion/Accordion";
+import Schedule from './Schedule.jsx';
+
 
 
 import ReactToPrint from 'react-to-print';
@@ -34,7 +36,7 @@ class Report extends React.Component {
 				/>
 				<span onClick={this.toPDF} className="print-report">Download this report</span>
 				<span className="close-report" onClick={() => this.props.report()}>Close report</span>
-				{/* {
+				{
 					this.props.addExtra ?
 						<h4>Paying a little more than required minimum total will take {Format.months(Result.payoff)} to payoff your debt.</h4>
 						:
@@ -43,8 +45,7 @@ class Report extends React.Component {
 				{
 					this.props.addExtra ?
 						<p>
-						Your current total of {Format.usd(totalBalance)} will take you {Format.months(Result.payoff)} to payoff, if you continue to make a monthly payment of {Format.usd(Result.monthly * 100)}.
-						If you continue to make this same amount of additional payments it will take you {Format.months(Result.payoff)} to payoff this debt.
+						Nice! With your additional payment it brings your total down to {Format.usd(totalBalance)}. This will take you {Format.months(Result.payoff)} to payoff, if you continue to make a monthly payment of {Format.usd(Result.monthly * 100)}.
 						Your total interest paid will now be {Format.usd(Result.interestPaid * 100)}.
 					</p>
 						:
@@ -52,16 +53,23 @@ class Report extends React.Component {
 						Your current total of {Format.usd(totalBalance)} will take you {Format.months(Result.payoff)} to payoff, if you continue to make a monthly payment of {Format.usd(Result.monthly * 100)}.
 						The total interest paid will be {Format.usd(Result.interestPaid * 100)}.
 					</p>
-				} */}
+				}
 
 				<h3>Estimated payoff will by {Format.relativeMonth(Result.payoff)}</h3>
-				<BalancePie interest={Result.interestPaid} principal={Result.totalPrincipal} />
-				<DebtSummary cards={this.props.cards} addExtra={this.props.addExtra} />
+				<BalanceChart totalBalance={totalBalance} schedule={Result.schedule} color={this.props.addExtra ? '#ff6f31' : '#434343'} />
+
+				{/* <BalancePie interest={Result.interestPaid} principal={Result.totalPrincipal} />
+				<DebtSummary cards={this.props.cards} addExtra={this.props.addExtra} /> */}
 
 				<Accordion
 					title="View your credit card payment schedule"
 					schedule={Result.schedule}
 				/>
+				{/* <Schedule schedule={Result.schedule} /> */}
+				{/* <Schedule 
+				   schedule={Result.schedule} 
+				   onMore={() => {setHeightState(`${content.current.scrollHeight}px`);
+				}} /> */}
 
 			</div>
 		</div>);

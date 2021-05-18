@@ -59,7 +59,7 @@ class CardInput extends React.Component {
 						<span style={{ color: "#FF6200" }}>
 							<FaRegQuestionCircle data-tip data-for='APRTooltip' />
 							<ReactTooltip id='APRTooltip' multiline={true}>
-							<span>Interest is essentially <br /> a charge to the borrower <br /> for the use of an asset</span>
+							<span>Interest rates, or APRs <br /> are the price you pay for using a credit card. <br /> If you carry a balance even some of the time, <br /> a lower APR will cost you less.</span>
 							</ReactTooltip>
 						</span>
 					}

@@ -10,9 +10,12 @@ class Schedule extends React.Component {
 	}
 	render() {
 		return (
-			<div className="payment-schedule">
+			<div className="debt-summary">
 				<table>
 					<thead>
+						<tr>
+							<th colSpan="100">Payment Schedule</th>
+						</tr>
 						<tr>
 							<th>Month</th>
 							<th>Payment</th>
