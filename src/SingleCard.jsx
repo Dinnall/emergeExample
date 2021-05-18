@@ -52,6 +52,12 @@ class SingleCard extends React.Component {
           {this.state.error &&
             <span className="card-error">{this.state.error}</span>
           }
+          <span className="card-reset" onClick={() => {
+            this.props.reset().then(() => {
+              this.setState({data: this.props.data, calculated: false})
+            });
+
+          }}>Reset</span>
         </div>
         {/* <div className="card-summary" ref={el => (this.componentRef = el)}>
 					<CardResult label="Monthly payment" value={Format.usd(Result.monthly * 100)} />

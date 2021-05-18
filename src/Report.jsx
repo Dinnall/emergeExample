@@ -32,7 +32,7 @@ class Report extends React.Component {
 						// to the root node of the returned component as it will be overwritten.
 						return <span className="print-report">Print this report</span>;
 					}}
-					content={() => ref}
+					content={() => ref.current}
 				/>
 				<span onClick={this.toPDF} className="print-report">Download this report</span>
 				<span className="close-report" onClick={() => this.props.report()}>Close report</span>
@@ -61,15 +61,12 @@ class Report extends React.Component {
 				{/* <BalancePie interest={Result.interestPaid} principal={Result.totalPrincipal} />
 				<DebtSummary cards={this.props.cards} addExtra={this.props.addExtra} /> */}
 
-				<Accordion
+				{/* <Accordion
 					title="View your credit card payment schedule"
 					schedule={Result.schedule}
 				/>
-				{/* <Schedule schedule={Result.schedule} /> */}
-				{/* <Schedule 
-				   schedule={Result.schedule} 
-				   onMore={() => {setHeightState(`${content.current.scrollHeight}px`);
-				}} /> */}
+				<Schedule schedule={Result.schedule} /> */}
+				<Schedule schedule={Result.schedule} />
 
 			</div>
 		</div>);

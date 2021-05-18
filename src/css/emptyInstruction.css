@@ -95,3 +95,28 @@
 .clearfix {
     clear: both;
 }
+
+@media (max-width: 768px){
+
+    .landing-page .container{
+        flex-direction: column;;
+    }
+    .landing-page .image {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .landing-page .image img {
+        border-radius:16px 16px 0 0 !important;
+        height:300px;
+        width:100%;
+        object-fit: cover;
+        object-position: center 25%;
+    }
+    .landing-page .info{
+        padding:10px;
+        width:100%;
+    }
+    .landing-page .info h1{
+        font-size:20px;
+    }
+}

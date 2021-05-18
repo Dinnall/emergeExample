@@ -40,9 +40,7 @@ class Schedule extends React.Component {
 						<tr>
 							<td colSpan="15" className="showMore" onClick={
 								() =>{
-									this.setState({showAll: !(this.state.showAll)}, () => {
-										this.props.onMore();
-									});
+									this.setState({showAll: !(this.state.showAll)});
 								}
 							}>
 								{this.state.showAll ? "Show less" : "Show more"}
