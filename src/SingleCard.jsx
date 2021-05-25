@@ -122,7 +122,7 @@ class SingleCard extends React.Component {
     let current = this.state.data;
     if (value > 3600 && name === "rate") value = 3600;
     if (name === "minimum") value = value;
-    if (value > 25000 && name === "extra") value = 25000;
+    if (value > 50000 && name === "extra") value = 50000;
     if (typeof current[name] !== "undefined") {
       current[name] = value;
       this.setState({ data: current });

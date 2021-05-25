@@ -37,7 +37,7 @@ class CardInput extends React.Component {
 			step = 1;
 		switch (this.props.name) {
 			case "extra":
-				max = 25000;
+				max = 50000;
 				step = 1;
 				break;
 			case "rate":
